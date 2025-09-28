@@ -1,0 +1,14 @@
+/Users/asmrofficialfinder/Desktop/InterfaceCode/bin/Debug/net9.0/InterfaceCode
+/Users/asmrofficialfinder/Desktop/InterfaceCode/bin/Debug/net9.0/InterfaceCode.deps.json
+/Users/asmrofficialfinder/Desktop/InterfaceCode/bin/Debug/net9.0/InterfaceCode.runtimeconfig.json
+/Users/asmrofficialfinder/Desktop/InterfaceCode/bin/Debug/net9.0/InterfaceCode.dll
+/Users/asmrofficialfinder/Desktop/InterfaceCode/bin/Debug/net9.0/InterfaceCode.pdb
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/InterfaceCode.GeneratedMSBuildEditorConfig.editorconfig
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/InterfaceCode.AssemblyInfoInputs.cache
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/InterfaceCode.AssemblyInfo.cs
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/InterfaceCode.csproj.CoreCompileInputs.cache
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/InterfaceCode.dll
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/refint/InterfaceCode.dll
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/InterfaceCode.pdb
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/InterfaceCode.genruntimeconfig.cache
+/Users/asmrofficialfinder/Desktop/InterfaceCode/obj/Debug/net9.0/ref/InterfaceCode.dll
