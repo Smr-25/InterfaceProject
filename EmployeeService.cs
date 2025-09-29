@@ -65,7 +65,7 @@ namespace InterfaceProject
             if (string.IsNullOrWhiteSpace(address))
                 return GetAll();
 
-            return Array.FindAll(GetAll(), e => e.Address.Contains(address, StringComparison.OrdinalIgnoreCase
+            return Array.FindAll(GetAll(), e => e.Address.Equals(address, StringComparison.OrdinalIgnoreCase
                 ));
         }
 
