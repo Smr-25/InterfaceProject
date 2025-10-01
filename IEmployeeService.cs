@@ -2,11 +2,13 @@ namespace InterfaceProject
 {
 	public interface IEmployeeService
 	{
-		public Employee[] GetAll();
-		public Employee[] SearchByFullName(string searchingText);
-		public Employee[] FilterByAddress(string address);
-		public Employee[] SortByAge(string keyValue);
+		public IEnumerable<Employee> GetAll();
+		public IEnumerable<Employee> SearchByFullName(string searchingText);
+		public IEnumerable<Employee> FilterByAddress(string address);
+		public IEnumerable<Employee> SortByAge(string keyValue);
 		public int SumOfEmployeesAges();
-		public int AverageOfEmployeeAges();
+		public double AverageOfEmployeeAges();
+		public void Create(Employee employee);
+		public Employee GetById(int id);
     }
 }
