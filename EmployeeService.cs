@@ -19,6 +19,11 @@ namespace InterfaceProject
 
         public IEnumerable<Employee> FilterByAddress(string address)
         {
+            if (string.IsNullOrWhiteSpace(address))
+            {
+                return GetAll();
+            }
+
             return AppDbContext<Employee>.Datas.FindAll(m => m.Address.Equals(address, StringComparison.OrdinalIgnoreCase));
         }
 
