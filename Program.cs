@@ -7,12 +7,10 @@ while (true)
 Console.WriteLine("1. Add Employee");
 Console.WriteLine("2. Show Employees");
 Console.WriteLine("3. Search by Full Name");
-Console.WriteLine("4. Filter by Address");
-Console.WriteLine("5. Sort Employees by Age");
-Console.WriteLine("6. Get Average by Age");
-Console.WriteLine("7. Get Sum of Ages");
-Console.WriteLine("8. Get Employee by ID");
-Console.WriteLine("9. Quit");
+Console.WriteLine("4. Sort Employees for Age");
+Console.WriteLine("5. Get Avarage by Age");
+Console.WriteLine("6. Get Sum of Ages");
+Console.WriteLine("7. Quit");
 Console.WriteLine();
 Console.WriteLine("Please enter option number: ");
 Option: string optionStr = Console.ReadLine();
@@ -22,31 +20,25 @@ bool isCorrectFormatOption = int.TryParse(optionStr, out int option);
     {
         switch (option)
         {
-            case 1:
+            case (int)Operations.Create:
                 employeeController.ExecuteCreate();
                 break;
-            case 2:
+            case (int)Operations.Show:
                 employeeController.ExecuteGetAll();
                 break;
-            case 3:
+            case (int)Operations.SearchByFullName:
                 employeeController.ExecuteSearchByFullName();
                 break;
-            case 4:
-                employeeController.ExecuteFilterByAddress();
-                break;
-            case 5:
+            case (int)Operations.SortByAge:
                 employeeController.ExecuteSortByAge();
                 break;
-            case 6:
+            case (int)Operations.AvarageOfAges:
                 employeeController.ExecuteAvarageOfAges();
                 break;
-            case 7:
+            case (int)Operations.SumOfAges:
                 employeeController.ExecuteSumOfAges();
                 break;
-            case 8:
-                employeeController.ExecuteGetById();
-                break;
-            case 9:
+            case (int)Operations.Exit:
                 Console.WriteLine("Have A Good Day");
                 return;
             default:

@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace InterfaceProject
 {
     public class EmployeeService : IEmployeeService
@@ -19,11 +16,6 @@ namespace InterfaceProject
 
         public IEnumerable<Employee> FilterByAddress(string address)
         {
-            if (string.IsNullOrWhiteSpace(address))
-            {
-                return GetAll();
-            }
-
             return AppDbContext<Employee>.Datas.FindAll(m => m.Address.Equals(address, StringComparison.OrdinalIgnoreCase));
         }
 
@@ -59,7 +51,12 @@ namespace InterfaceProject
 
         public Employee GetById(int id)
         {
-            return AppDbContext<Employee>.Datas.Find(m => m.Id == id);  
+            var existEmployee = AppDbContext<Employee>.Datas.FirstOrDefault(m => m.Id == id);
+            if (existEmployee is null)
+            {
+                throw new NullReferenceException("data notfound");
+            }
+            return existEmployee;
         }
     }
 }

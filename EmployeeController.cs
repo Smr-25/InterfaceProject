@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace InterfaceProject
 {
 	public class EmployeeController
@@ -25,7 +22,7 @@ namespace InterfaceProject
             Console.WriteLine("Input Text");
         SearchText: string searchingTxt = Console.ReadLine();
 
-            bool isSearchingText = !string.IsNullOrWhiteSpace(searchingTxt) && searchingTxt.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+            bool isSearchingText = searchingTxt.All(char.IsLetter);
             if (!isSearchingText)
             {
                 Console.WriteLine("Incorrect Text");
@@ -45,7 +42,7 @@ namespace InterfaceProject
             Console.WriteLine("Input Address for Filtering");
         SearchingAddress: string searchingAddress = Console.ReadLine();
 
-            bool isSearchingAddress = !string.IsNullOrWhiteSpace(searchingAddress) && searchingAddress.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c) || c == ',' || c == '.' || c == '-');
+            bool isSearchingAddress = searchingAddress.All(char.IsLetter);
             if (!isSearchingAddress)
             {
                 Console.WriteLine("Incorrect Text");
@@ -71,7 +68,7 @@ namespace InterfaceProject
                 goto KeyValue;
 
             }
-            foreach (var item in _employeeService.SortByAge(keyValue))
+            foreach (var item in _employeeService.SortByAge("asc"))
             {
                 Console.WriteLine(item.FullName + " " + item.Age + " " + item.Email + " " + item.Address);
             }
@@ -93,13 +90,22 @@ namespace InterfaceProject
             bool isCorrectId = int.TryParse(idStr, out int id);
             if (!isCorrectId)
             {
+                try
+                {
+                    var item = _employeeService.GetById(id);
+                    Console.WriteLine(item.Id + " " + item.FullName + " " + item.Age + " " + item.Email + " " + item.Address);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("Incorrect id format");
+                    goto Id;
+                }
                 Console.WriteLine("Incorrect id format");
                 goto Id;
             }
 
-            var item =  _employeeService.GetById(id);
-
-            Console.WriteLine(item.Id + " " + item.FullName + " " + item.Age + " " + item.Email + " " + item.Address);
+          
         }
 
         public void ExecuteCreate()
@@ -108,7 +114,7 @@ namespace InterfaceProject
 
             Console.WriteLine("Input full name");
         FullName: string fullName = Console.ReadLine();
-            bool isText = !string.IsNullOrWhiteSpace(fullName) && fullName.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+            bool isText = fullName.All(char.IsLetter);
             if (!isText)
             {
                 Console.WriteLine("Incorrect Full Name");
@@ -150,7 +156,7 @@ namespace InterfaceProject
             else
             {
                 Console.WriteLine("Incorrect phone format");
-                goto Phone;
+                goto Age;
             }
 
         }
